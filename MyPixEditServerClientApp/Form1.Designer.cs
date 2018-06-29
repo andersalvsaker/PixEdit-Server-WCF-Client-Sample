@@ -31,7 +31,6 @@
             this.btnCreateJob = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.labelStatus = new System.Windows.Forms.Label();
-            this.btnCollectFinishedJob = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCreateJob
@@ -56,27 +55,16 @@
             // labelStatus
             // 
             this.labelStatus.AutoSize = true;
-            this.labelStatus.Location = new System.Drawing.Point(76, 48);
+            this.labelStatus.Location = new System.Drawing.Point(76, 49);
             this.labelStatus.Name = "labelStatus";
             this.labelStatus.Size = new System.Drawing.Size(0, 13);
             this.labelStatus.TabIndex = 2;
-            // 
-            // btnCollectFinishedJob
-            // 
-            this.btnCollectFinishedJob.Location = new System.Drawing.Point(15, 75);
-            this.btnCollectFinishedJob.Name = "btnCollectFinishedJob";
-            this.btnCollectFinishedJob.Size = new System.Drawing.Size(116, 23);
-            this.btnCollectFinishedJob.TabIndex = 3;
-            this.btnCollectFinishedJob.Text = "Collect finished job";
-            this.btnCollectFinishedJob.UseVisualStyleBackColor = true;
-            this.btnCollectFinishedJob.Click += new System.EventHandler(this.btnCollectFinishedJob_Click);
             // 
             // PSClientApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(330, 235);
-            this.Controls.Add(this.btnCollectFinishedJob);
             this.Controls.Add(this.labelStatus);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCreateJob);
@@ -94,7 +82,6 @@
         private System.Windows.Forms.Button btnCreateJob;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelStatus;
-        private System.Windows.Forms.Button btnCollectFinishedJob;
     }
 }
 

@@ -309,9 +309,5 @@ namespace MyPixEditServerClientApp
         {
             UnSubscribeFromPixEditServer();
         }
-
-        private void btnCollectFinishedJob_Click(object sender, EventArgs e)
-        {
-        }
     }
 }
