@@ -1,0 +1,881 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="PixEditWebServiceLibrary" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PixEditWebService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="PixEditWebServiceLibrary" location="" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/PixEditWebServiceLibrary" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DocProcessProfilesLib" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPixEditWebService_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_ValidateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUser" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_ValidateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_UpdateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUser" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_UpdateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_ChangeUserPassword_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUserPassword" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_ChangeUserPassword_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeUserPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SaveUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUser" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SaveUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_FindUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindUser" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_FindUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetUserList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserList" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetUserList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetOnlineCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineCount" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetOnlineCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnlineCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_IsUserAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_IsUserAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsUserAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SetUserAdmin_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserAdmin" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SetUserAdmin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserAdminResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_CreateJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateJob" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_CreateJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_CreateConvertJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateConvertJob" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_CreateConvertJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateConvertJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SubmitJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitJob" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SubmitJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubmitJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_CancelJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:CancelJob" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_CancelJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CancelJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_AbortJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:AbortJob" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_AbortJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AbortJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_PurgeJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:PurgeJob" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_PurgeJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PurgeJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_ArchiveJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:ArchiveJob" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_ArchiveJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ArchiveJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobStatusFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobStatusFolder" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobStatusFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobStatusFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobDocumentsFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobDocumentsFolder" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobDocumentsFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobDocumentsFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetOutputFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutputFolder" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetOutputFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOutputFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_BeginUploadJobDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:BeginUploadJobDocument" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_BeginUploadJobDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BeginUploadJobDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_UploadJobDocumentChunk_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadJobDocumentChunk" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_UploadJobDocumentChunk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadJobDocumentChunkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobDocumentSize_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobDocumentSize" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobDocumentSize_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobDocumentSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_DownloadJobDocumentChunk_InputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadJobDocumentChunk" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_DownloadJobDocumentChunk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DownloadJobDocumentChunkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobStatus" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobStatusPathname_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobStatusPathname" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobStatusPathname_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobStatusPathnameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobSpec_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobSpec" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobSpec_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobSpecResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobSpecPathname_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobSpecPathname" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobSpecPathname_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobSpecPathnameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetStatusJobList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusJobList" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetStatusJobList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStatusJobListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobList" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_PurgeAllJobs_InputMessage">
+    <wsdl:part name="parameters" element="tns:PurgeAllJobs" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_PurgeAllJobs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PurgeAllJobsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_PurgeJobFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:PurgeJobFolder" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_PurgeJobFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PurgeJobFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SaveJobProfileList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveJobProfileList" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SaveJobProfileList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveJobProfileListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobProfileList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobProfileList" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobProfileList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobProfileListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SetUserJobProfileList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserJobProfileList" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SetUserJobProfileList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetUserJobProfileListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetUserJobProfileList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserJobProfileList" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetUserJobProfileList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserJobProfileListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetServerStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerStatus" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetServerStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetServerLogPathName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerLogPathName" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetServerLogPathName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerLogPathNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetServerLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerLog" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetServerLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetTotalJobCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalJobCount" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetTotalJobCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTotalJobCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetServerQueue_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerQueue" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetServerQueue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetQueuedJobsCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueuedJobsCount" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetQueuedJobsCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueuedJobsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobLog" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetJobLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetJobLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetServerPerformanceLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerPerformanceLog" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetServerPerformanceLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerPerformanceLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetServerImagesPath_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerImagesPath" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetServerImagesPath_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerImagesPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetServerIP_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerIP" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetServerIP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetAppSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppSetting" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetAppSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SetAppSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetAppSetting" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SetAppSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetAppSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetEncryptedAppSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEncryptedAppSetting" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetEncryptedAppSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEncryptedAppSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SetEncryptedAppSetting_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetEncryptedAppSetting" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SetEncryptedAppSetting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetEncryptedAppSettingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetClientDeviceList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientDeviceList" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetClientDeviceList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetClientDeviceListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SaveClientDeviceList_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveClientDeviceList" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SaveClientDeviceList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveClientDeviceListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_FlushServerAlerts_InputMessage">
+    <wsdl:part name="parameters" element="tns:FlushServerAlerts" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_FlushServerAlerts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FlushServerAlertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_AddAlertToServerStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAlertToServerStatus" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_AddAlertToServerStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAlertToServerStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_RemoveAlertFromServerStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAlertFromServerStatus" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_RemoveAlertFromServerStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveAlertFromServerStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetPixEditServerType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPixEditServerType" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_GetPixEditServerType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPixEditServerTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SubscribeNotifications_InputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeNotifications" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_SubscribeNotifications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribeNotificationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_UnsubscribeNotifications_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeNotifications" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_UnsubscribeNotifications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UnsubscribeNotificationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_OnServerStatus_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnServerStatus" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_OnJobStatusChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnJobStatusChanged" />
+  </wsdl:message>
+  <wsdl:message name="IPixEditWebService_OnJobProfilesChanged_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:OnJobProfilesChanged" />
+  </wsdl:message>
+  <wsdl:portType name="IPixEditWebService">
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/CreateUser" message="tns:IPixEditWebService_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/CreateUserResponse" message="tns:IPixEditWebService_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/ValidateUser" message="tns:IPixEditWebService_ValidateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/ValidateUserResponse" message="tns:IPixEditWebService_ValidateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/UpdateUser" message="tns:IPixEditWebService_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/UpdateUserResponse" message="tns:IPixEditWebService_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/ChangeUserPassword" message="tns:IPixEditWebService_ChangeUserPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/ChangeUserPasswordResponse" message="tns:IPixEditWebService_ChangeUserPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/DeleteUser" message="tns:IPixEditWebService_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/DeleteUserResponse" message="tns:IPixEditWebService_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetUser" message="tns:IPixEditWebService_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetUserResponse" message="tns:IPixEditWebService_GetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SaveUser" message="tns:IPixEditWebService_SaveUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SaveUserResponse" message="tns:IPixEditWebService_SaveUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/FindUser" message="tns:IPixEditWebService_FindUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/FindUserResponse" message="tns:IPixEditWebService_FindUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetUserList" message="tns:IPixEditWebService_GetUserList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetUserListResponse" message="tns:IPixEditWebService_GetUserList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetOnlineCount" message="tns:IPixEditWebService_GetOnlineCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetOnlineCountResponse" message="tns:IPixEditWebService_GetOnlineCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/IsUserAdmin" message="tns:IPixEditWebService_IsUserAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/IsUserAdminResponse" message="tns:IPixEditWebService_IsUserAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SetUserAdmin" message="tns:IPixEditWebService_SetUserAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SetUserAdminResponse" message="tns:IPixEditWebService_SetUserAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/CreateJob" message="tns:IPixEditWebService_CreateJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/CreateJobResponse" message="tns:IPixEditWebService_CreateJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateConvertJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/CreateConvertJob" message="tns:IPixEditWebService_CreateConvertJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/CreateConvertJobResponse" message="tns:IPixEditWebService_CreateConvertJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SubmitJob" message="tns:IPixEditWebService_SubmitJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SubmitJobResponse" message="tns:IPixEditWebService_SubmitJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/CancelJob" message="tns:IPixEditWebService_CancelJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/CancelJobResponse" message="tns:IPixEditWebService_CancelJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AbortJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/AbortJob" message="tns:IPixEditWebService_AbortJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/AbortJobResponse" message="tns:IPixEditWebService_AbortJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PurgeJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/PurgeJob" message="tns:IPixEditWebService_PurgeJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/PurgeJobResponse" message="tns:IPixEditWebService_PurgeJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/ArchiveJob" message="tns:IPixEditWebService_ArchiveJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/ArchiveJobResponse" message="tns:IPixEditWebService_ArchiveJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobStatusFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobStatusFolder" message="tns:IPixEditWebService_GetJobStatusFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobStatusFolderResponse" message="tns:IPixEditWebService_GetJobStatusFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobDocumentsFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobDocumentsFolder" message="tns:IPixEditWebService_GetJobDocumentsFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobDocumentsFolderResponse" message="tns:IPixEditWebService_GetJobDocumentsFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutputFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetOutputFolder" message="tns:IPixEditWebService_GetOutputFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetOutputFolderResponse" message="tns:IPixEditWebService_GetOutputFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BeginUploadJobDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/BeginUploadJobDocument" message="tns:IPixEditWebService_BeginUploadJobDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/BeginUploadJobDocumentResponse" message="tns:IPixEditWebService_BeginUploadJobDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadJobDocumentChunk">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/UploadJobDocumentChunk" message="tns:IPixEditWebService_UploadJobDocumentChunk_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/UploadJobDocumentChunkResponse" message="tns:IPixEditWebService_UploadJobDocumentChunk_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobDocumentSize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobDocumentSize" message="tns:IPixEditWebService_GetJobDocumentSize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobDocumentSizeResponse" message="tns:IPixEditWebService_GetJobDocumentSize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadJobDocumentChunk">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/DownloadJobDocumentChunk" message="tns:IPixEditWebService_DownloadJobDocumentChunk_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/DownloadJobDocumentChunkResponse" message="tns:IPixEditWebService_DownloadJobDocumentChunk_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobStatus" message="tns:IPixEditWebService_GetJobStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobStatusResponse" message="tns:IPixEditWebService_GetJobStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobStatusPathname">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobStatusPathname" message="tns:IPixEditWebService_GetJobStatusPathname_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobStatusPathnameResponse" message="tns:IPixEditWebService_GetJobStatusPathname_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobSpec">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobSpec" message="tns:IPixEditWebService_GetJobSpec_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobSpecResponse" message="tns:IPixEditWebService_GetJobSpec_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobSpecPathname">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobSpecPathname" message="tns:IPixEditWebService_GetJobSpecPathname_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobSpecPathnameResponse" message="tns:IPixEditWebService_GetJobSpecPathname_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusJobList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetStatusJobList" message="tns:IPixEditWebService_GetStatusJobList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetStatusJobListResponse" message="tns:IPixEditWebService_GetStatusJobList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobList" message="tns:IPixEditWebService_GetJobList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobListResponse" message="tns:IPixEditWebService_GetJobList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PurgeAllJobs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/PurgeAllJobs" message="tns:IPixEditWebService_PurgeAllJobs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/PurgeAllJobsResponse" message="tns:IPixEditWebService_PurgeAllJobs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PurgeJobFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/PurgeJobFolder" message="tns:IPixEditWebService_PurgeJobFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/PurgeJobFolderResponse" message="tns:IPixEditWebService_PurgeJobFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveJobProfileList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SaveJobProfileList" message="tns:IPixEditWebService_SaveJobProfileList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SaveJobProfileListResponse" message="tns:IPixEditWebService_SaveJobProfileList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobProfileList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobProfileList" message="tns:IPixEditWebService_GetJobProfileList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobProfileListResponse" message="tns:IPixEditWebService_GetJobProfileList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserJobProfileList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SetUserJobProfileList" message="tns:IPixEditWebService_SetUserJobProfileList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SetUserJobProfileListResponse" message="tns:IPixEditWebService_SetUserJobProfileList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserJobProfileList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetUserJobProfileList" message="tns:IPixEditWebService_GetUserJobProfileList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetUserJobProfileListResponse" message="tns:IPixEditWebService_GetUserJobProfileList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerStatus" message="tns:IPixEditWebService_GetServerStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerStatusResponse" message="tns:IPixEditWebService_GetServerStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerLogPathName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerLogPathName" message="tns:IPixEditWebService_GetServerLogPathName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerLogPathNameResponse" message="tns:IPixEditWebService_GetServerLogPathName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerLog" message="tns:IPixEditWebService_GetServerLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerLogResponse" message="tns:IPixEditWebService_GetServerLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalJobCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetTotalJobCount" message="tns:IPixEditWebService_GetTotalJobCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetTotalJobCountResponse" message="tns:IPixEditWebService_GetTotalJobCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerQueue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerQueue" message="tns:IPixEditWebService_GetServerQueue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerQueueResponse" message="tns:IPixEditWebService_GetServerQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueuedJobsCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetQueuedJobsCount" message="tns:IPixEditWebService_GetQueuedJobsCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetQueuedJobsCountResponse" message="tns:IPixEditWebService_GetQueuedJobsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobLog" message="tns:IPixEditWebService_GetJobLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobLogResponse" message="tns:IPixEditWebService_GetJobLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerPerformanceLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerPerformanceLog" message="tns:IPixEditWebService_GetServerPerformanceLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerPerformanceLogResponse" message="tns:IPixEditWebService_GetServerPerformanceLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerImagesPath">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerImagesPath" message="tns:IPixEditWebService_GetServerImagesPath_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerImagesPathResponse" message="tns:IPixEditWebService_GetServerImagesPath_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerIP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerIP" message="tns:IPixEditWebService_GetServerIP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerIPResponse" message="tns:IPixEditWebService_GetServerIP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetAppSetting" message="tns:IPixEditWebService_GetAppSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetAppSettingResponse" message="tns:IPixEditWebService_GetAppSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAppSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SetAppSetting" message="tns:IPixEditWebService_SetAppSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SetAppSettingResponse" message="tns:IPixEditWebService_SetAppSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEncryptedAppSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetEncryptedAppSetting" message="tns:IPixEditWebService_GetEncryptedAppSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetEncryptedAppSettingResponse" message="tns:IPixEditWebService_GetEncryptedAppSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetEncryptedAppSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SetEncryptedAppSetting" message="tns:IPixEditWebService_SetEncryptedAppSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SetEncryptedAppSettingResponse" message="tns:IPixEditWebService_SetEncryptedAppSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientDeviceList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetClientDeviceList" message="tns:IPixEditWebService_GetClientDeviceList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetClientDeviceListResponse" message="tns:IPixEditWebService_GetClientDeviceList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveClientDeviceList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SaveClientDeviceList" message="tns:IPixEditWebService_SaveClientDeviceList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SaveClientDeviceListResponse" message="tns:IPixEditWebService_SaveClientDeviceList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FlushServerAlerts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/FlushServerAlerts" message="tns:IPixEditWebService_FlushServerAlerts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/FlushServerAlertsResponse" message="tns:IPixEditWebService_FlushServerAlerts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAlertToServerStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/AddAlertToServerStatus" message="tns:IPixEditWebService_AddAlertToServerStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/AddAlertToServerStatusResponse" message="tns:IPixEditWebService_AddAlertToServerStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAlertFromServerStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/RemoveAlertFromServerStatus" message="tns:IPixEditWebService_RemoveAlertFromServerStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/RemoveAlertFromServerStatusResponse" message="tns:IPixEditWebService_RemoveAlertFromServerStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPixEditServerType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetPixEditServerType" message="tns:IPixEditWebService_GetPixEditServerType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetPixEditServerTypeResponse" message="tns:IPixEditWebService_GetPixEditServerType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeNotifications">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebService/SubscribeNotifications" message="tns:IPixEditWebService_SubscribeNotifications_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebService/SubscribeNotificationsResponse" message="tns:IPixEditWebService_SubscribeNotifications_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UnsubscribeNotifications">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebService/UnsubscribeNotifications" message="tns:IPixEditWebService_UnsubscribeNotifications_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebService/UnsubscribeNotificationsResponse" message="tns:IPixEditWebService_UnsubscribeNotifications_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnServerStatus">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebService/OnServerStatus" message="tns:IPixEditWebService_OnServerStatus_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnJobStatusChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebService/OnJobStatusChanged" message="tns:IPixEditWebService_OnJobStatusChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OnJobProfilesChanged">
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebService/OnJobProfilesChanged" message="tns:IPixEditWebService_OnJobProfilesChanged_OutputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IPixEditWebServiceSimplex">
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/CreateUser" message="tns:IPixEditWebService_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/CreateUserResponse" message="tns:IPixEditWebService_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/ValidateUser" message="tns:IPixEditWebService_ValidateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/ValidateUserResponse" message="tns:IPixEditWebService_ValidateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/UpdateUser" message="tns:IPixEditWebService_UpdateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/UpdateUserResponse" message="tns:IPixEditWebService_UpdateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeUserPassword">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/ChangeUserPassword" message="tns:IPixEditWebService_ChangeUserPassword_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/ChangeUserPasswordResponse" message="tns:IPixEditWebService_ChangeUserPassword_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/DeleteUser" message="tns:IPixEditWebService_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/DeleteUserResponse" message="tns:IPixEditWebService_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetUser" message="tns:IPixEditWebService_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetUserResponse" message="tns:IPixEditWebService_GetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SaveUser" message="tns:IPixEditWebService_SaveUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SaveUserResponse" message="tns:IPixEditWebService_SaveUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/FindUser" message="tns:IPixEditWebService_FindUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/FindUserResponse" message="tns:IPixEditWebService_FindUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetUserList" message="tns:IPixEditWebService_GetUserList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetUserListResponse" message="tns:IPixEditWebService_GetUserList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnlineCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetOnlineCount" message="tns:IPixEditWebService_GetOnlineCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetOnlineCountResponse" message="tns:IPixEditWebService_GetOnlineCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsUserAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/IsUserAdmin" message="tns:IPixEditWebService_IsUserAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/IsUserAdminResponse" message="tns:IPixEditWebService_IsUserAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserAdmin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SetUserAdmin" message="tns:IPixEditWebService_SetUserAdmin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SetUserAdminResponse" message="tns:IPixEditWebService_SetUserAdmin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/CreateJob" message="tns:IPixEditWebService_CreateJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/CreateJobResponse" message="tns:IPixEditWebService_CreateJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateConvertJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/CreateConvertJob" message="tns:IPixEditWebService_CreateConvertJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/CreateConvertJobResponse" message="tns:IPixEditWebService_CreateConvertJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SubmitJob" message="tns:IPixEditWebService_SubmitJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SubmitJobResponse" message="tns:IPixEditWebService_SubmitJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CancelJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/CancelJob" message="tns:IPixEditWebService_CancelJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/CancelJobResponse" message="tns:IPixEditWebService_CancelJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AbortJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/AbortJob" message="tns:IPixEditWebService_AbortJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/AbortJobResponse" message="tns:IPixEditWebService_AbortJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PurgeJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/PurgeJob" message="tns:IPixEditWebService_PurgeJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/PurgeJobResponse" message="tns:IPixEditWebService_PurgeJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveJob">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/ArchiveJob" message="tns:IPixEditWebService_ArchiveJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/ArchiveJobResponse" message="tns:IPixEditWebService_ArchiveJob_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobStatusFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobStatusFolder" message="tns:IPixEditWebService_GetJobStatusFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobStatusFolderResponse" message="tns:IPixEditWebService_GetJobStatusFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobDocumentsFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobDocumentsFolder" message="tns:IPixEditWebService_GetJobDocumentsFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobDocumentsFolderResponse" message="tns:IPixEditWebService_GetJobDocumentsFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOutputFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetOutputFolder" message="tns:IPixEditWebService_GetOutputFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetOutputFolderResponse" message="tns:IPixEditWebService_GetOutputFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BeginUploadJobDocument">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/BeginUploadJobDocument" message="tns:IPixEditWebService_BeginUploadJobDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/BeginUploadJobDocumentResponse" message="tns:IPixEditWebService_BeginUploadJobDocument_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadJobDocumentChunk">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/UploadJobDocumentChunk" message="tns:IPixEditWebService_UploadJobDocumentChunk_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/UploadJobDocumentChunkResponse" message="tns:IPixEditWebService_UploadJobDocumentChunk_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobDocumentSize">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobDocumentSize" message="tns:IPixEditWebService_GetJobDocumentSize_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobDocumentSizeResponse" message="tns:IPixEditWebService_GetJobDocumentSize_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DownloadJobDocumentChunk">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/DownloadJobDocumentChunk" message="tns:IPixEditWebService_DownloadJobDocumentChunk_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/DownloadJobDocumentChunkResponse" message="tns:IPixEditWebService_DownloadJobDocumentChunk_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobStatus" message="tns:IPixEditWebService_GetJobStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobStatusResponse" message="tns:IPixEditWebService_GetJobStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobStatusPathname">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobStatusPathname" message="tns:IPixEditWebService_GetJobStatusPathname_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobStatusPathnameResponse" message="tns:IPixEditWebService_GetJobStatusPathname_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobSpec">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobSpec" message="tns:IPixEditWebService_GetJobSpec_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobSpecResponse" message="tns:IPixEditWebService_GetJobSpec_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobSpecPathname">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobSpecPathname" message="tns:IPixEditWebService_GetJobSpecPathname_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobSpecPathnameResponse" message="tns:IPixEditWebService_GetJobSpecPathname_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatusJobList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetStatusJobList" message="tns:IPixEditWebService_GetStatusJobList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetStatusJobListResponse" message="tns:IPixEditWebService_GetStatusJobList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobList" message="tns:IPixEditWebService_GetJobList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobListResponse" message="tns:IPixEditWebService_GetJobList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PurgeAllJobs">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/PurgeAllJobs" message="tns:IPixEditWebService_PurgeAllJobs_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/PurgeAllJobsResponse" message="tns:IPixEditWebService_PurgeAllJobs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PurgeJobFolder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/PurgeJobFolder" message="tns:IPixEditWebService_PurgeJobFolder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/PurgeJobFolderResponse" message="tns:IPixEditWebService_PurgeJobFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveJobProfileList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SaveJobProfileList" message="tns:IPixEditWebService_SaveJobProfileList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SaveJobProfileListResponse" message="tns:IPixEditWebService_SaveJobProfileList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobProfileList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobProfileList" message="tns:IPixEditWebService_GetJobProfileList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobProfileListResponse" message="tns:IPixEditWebService_GetJobProfileList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUserJobProfileList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SetUserJobProfileList" message="tns:IPixEditWebService_SetUserJobProfileList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SetUserJobProfileListResponse" message="tns:IPixEditWebService_SetUserJobProfileList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserJobProfileList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetUserJobProfileList" message="tns:IPixEditWebService_GetUserJobProfileList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetUserJobProfileListResponse" message="tns:IPixEditWebService_GetUserJobProfileList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerStatus" message="tns:IPixEditWebService_GetServerStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerStatusResponse" message="tns:IPixEditWebService_GetServerStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerLogPathName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerLogPathName" message="tns:IPixEditWebService_GetServerLogPathName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerLogPathNameResponse" message="tns:IPixEditWebService_GetServerLogPathName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerLog" message="tns:IPixEditWebService_GetServerLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerLogResponse" message="tns:IPixEditWebService_GetServerLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTotalJobCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetTotalJobCount" message="tns:IPixEditWebService_GetTotalJobCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetTotalJobCountResponse" message="tns:IPixEditWebService_GetTotalJobCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerQueue">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerQueue" message="tns:IPixEditWebService_GetServerQueue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerQueueResponse" message="tns:IPixEditWebService_GetServerQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueuedJobsCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetQueuedJobsCount" message="tns:IPixEditWebService_GetQueuedJobsCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetQueuedJobsCountResponse" message="tns:IPixEditWebService_GetQueuedJobsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetJobLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobLog" message="tns:IPixEditWebService_GetJobLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetJobLogResponse" message="tns:IPixEditWebService_GetJobLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerPerformanceLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerPerformanceLog" message="tns:IPixEditWebService_GetServerPerformanceLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerPerformanceLogResponse" message="tns:IPixEditWebService_GetServerPerformanceLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerImagesPath">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerImagesPath" message="tns:IPixEditWebService_GetServerImagesPath_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerImagesPathResponse" message="tns:IPixEditWebService_GetServerImagesPath_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerIP">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerIP" message="tns:IPixEditWebService_GetServerIP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetServerIPResponse" message="tns:IPixEditWebService_GetServerIP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetAppSetting" message="tns:IPixEditWebService_GetAppSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetAppSettingResponse" message="tns:IPixEditWebService_GetAppSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetAppSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SetAppSetting" message="tns:IPixEditWebService_SetAppSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SetAppSettingResponse" message="tns:IPixEditWebService_SetAppSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEncryptedAppSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetEncryptedAppSetting" message="tns:IPixEditWebService_GetEncryptedAppSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetEncryptedAppSettingResponse" message="tns:IPixEditWebService_GetEncryptedAppSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetEncryptedAppSetting">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SetEncryptedAppSetting" message="tns:IPixEditWebService_SetEncryptedAppSetting_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SetEncryptedAppSettingResponse" message="tns:IPixEditWebService_SetEncryptedAppSetting_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetClientDeviceList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetClientDeviceList" message="tns:IPixEditWebService_GetClientDeviceList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetClientDeviceListResponse" message="tns:IPixEditWebService_GetClientDeviceList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveClientDeviceList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SaveClientDeviceList" message="tns:IPixEditWebService_SaveClientDeviceList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/SaveClientDeviceListResponse" message="tns:IPixEditWebService_SaveClientDeviceList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FlushServerAlerts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/FlushServerAlerts" message="tns:IPixEditWebService_FlushServerAlerts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/FlushServerAlertsResponse" message="tns:IPixEditWebService_FlushServerAlerts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAlertToServerStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/AddAlertToServerStatus" message="tns:IPixEditWebService_AddAlertToServerStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/AddAlertToServerStatusResponse" message="tns:IPixEditWebService_AddAlertToServerStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAlertFromServerStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/RemoveAlertFromServerStatus" message="tns:IPixEditWebService_RemoveAlertFromServerStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/RemoveAlertFromServerStatusResponse" message="tns:IPixEditWebService_RemoveAlertFromServerStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPixEditServerType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetPixEditServerType" message="tns:IPixEditWebService_GetPixEditServerType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPixEditWebServiceSimplex/GetPixEditServerTypeResponse" message="tns:IPixEditWebService_GetPixEditServerType_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="PixEditWebService">
+    <wsdl:port name="NetTcpBinding_IPixEditWebService" binding="i0:NetTcpBinding_IPixEditWebService">
+      <soap12:address location="net.tcp://tsws19:8080/PixEditWebService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>net.tcp://tsws19:8080/PixEditWebService</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+    <wsdl:port name="WSHttpBinding_IPixEditWebServiceSimplex" binding="i0:WSHttpBinding_IPixEditWebServiceSimplex">
+      <soap12:address location="http://tsws19:8180/PixEditWebService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://tsws19:8180/PixEditWebService</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

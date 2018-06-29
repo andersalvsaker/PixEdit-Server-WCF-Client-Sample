@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b259673f-7c4c-411d-8180-ee2bc54c370e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="net.tcp://localhost:8080/PixEditWebService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="7ea890e3-19f0-45cc-992e-aa87c9227b37" SourceId="1" SourceUrl="net.tcp://localhost:8080/PixEditWebService/mex" />
+    <MetadataFile FileName="PixEditWebServiceLibrary.wsdl" MetadataType="Wsdl" ID="205bb531-84ef-4c72-906e-e5ae428559da" SourceId="1" SourceUrl="net.tcp://localhost:8080/PixEditWebService/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="2ffe0485-b017-4306-8f4a-3d8d990a3a01" SourceId="1" SourceUrl="net.tcp://localhost:8080/PixEditWebService/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="8f0cfce0-2d4b-4df3-ad2a-3bb24b15012e" SourceId="1" SourceUrl="net.tcp://localhost:8080/PixEditWebService/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="4179ebf5-7c1b-4d6d-9104-9a547f62ade5" SourceId="1" SourceUrl="net.tcp://localhost:8080/PixEditWebService/mex" />
+    <MetadataFile FileName="PixEditWebServiceLibrary.xsd" MetadataType="Schema" ID="da0a2a88-865f-4746-8bb0-923145d3786b" SourceId="1" SourceUrl="net.tcp://localhost:8080/PixEditWebService/mex" />
+    <MetadataFile FileName="DocProcessProfilesLib.xsd" MetadataType="Schema" ID="54dbed65-2182-420e-ac2f-32e7efb2506f" SourceId="1" SourceUrl="net.tcp://localhost:8080/PixEditWebService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

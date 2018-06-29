@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/DocProcessProfilesLib" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/DocProcessProfilesLib" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="DocProcessStatus.StatusType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Created" />
+      <xs:enumeration value="InQueue" />
+      <xs:enumeration value="Processing" />
+      <xs:enumeration value="Succeeded" />
+      <xs:enumeration value="Failed" />
+      <xs:enumeration value="Delivered" />
+      <xs:enumeration value="Purged" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DocProcessStatus.StatusType" nillable="true" type="tns:DocProcessStatus.StatusType" />
+  <xs:simpleType name="DocServerFolderType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Created" />
+      <xs:enumeration value="Queued" />
+      <xs:enumeration value="Working" />
+      <xs:enumeration value="Succeeded" />
+      <xs:enumeration value="Failed" />
+      <xs:enumeration value="Output" />
+      <xs:enumeration value="Purged" />
+      <xs:enumeration value="Backup" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DocServerFolderType" nillable="true" type="tns:DocServerFolderType" />
+</xs:schema>
