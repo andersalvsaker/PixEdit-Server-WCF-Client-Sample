@@ -41,8 +41,6 @@ namespace MyPixEditServerClientApp
                 _jobStatusSubscriberID = _server.SubscribeNotifications(_userID);
 
             _timerCheckConnection = new System.Threading.Timer(TimerCheckConnection, null, TICKINTERVAL_MS, 0);
-
-            btnCollectFinishedJob.Enabled = false;
         }
         // Set up a timer to keep our connection with the service alive. This timer just calls 'GetServerStatus' avery other second to keeps things from timing out
         // Another possibility would be to increase the timeout values in the config files, but then you might end up with a very long time out if something fails.
@@ -235,6 +233,54 @@ namespace MyPixEditServerClientApp
             }
         }
 
+        void DownloadDocumentFromServer(Guid jobID, string filename, string dstFilePathname)
+        {
+            // Get file from server
+            long fileLength = _server.GetJobDocumentSize(_userID, jobID, filename);
+
+            // Get max chunk size from app.config file
+            int chunkSize = ((NetTcpBinding)_server.ChannelFactory.Endpoint.Binding).ReaderQuotas.MaxArrayLength;
+            int chunkCount = (int)(fileLength / chunkSize);
+            int lastChunkSize = (int)(fileLength % chunkSize);
+
+            // Create local file stream and server chunks
+            using (Stream stream = System.IO.File.Create(dstFilePathname))
+            {
+                int pos = 0;
+
+                for (int i = 0; i < chunkCount; i++)
+                {
+                    JobDocumentChunk chunk = _server.DownloadJobDocumentChunk(_userID, jobID, filename, pos, chunkSize);
+                    stream.Write(chunk.Data, 0, chunkSize);
+                    pos += chunkSize;
+                }
+
+                if (lastChunkSize > 0)
+                {
+                    JobDocumentChunk chunk = _server.DownloadJobDocumentChunk(_userID, jobID, filename, pos, lastChunkSize);
+                    stream.Write(chunk.Data, 0, lastChunkSize);
+                }
+            }
+        }
+
+        public static string MakeFilenameUnique(string path)
+        {
+            if (System.IO.File.Exists(path))
+            {
+                int i = 1;
+                while (true)
+                {
+                    string temppath = path.Insert(path.LastIndexOf('.'), string.Format("[{0}]", i++));
+                    if (!System.IO.File.Exists(temppath))
+                        return temppath;
+                }
+            }
+            else
+            {
+                return path;
+            }
+        }
+
         public void OnServerStatus(string status)
         {
 
@@ -271,21 +317,42 @@ namespace MyPixEditServerClientApp
                 // Get Job ID
                 Guid jobID = new Guid(xmlDoc.SelectSingleNode("DocProcessStatus/JobID").InnerText);
 
-                // Copy document(s) to our client folder
+                // Download document(s) to our client folder
                 string jobFolder = _server.GetJobDocumentsFolder(_userID, jobID);
+
+                // Get the source of our executable 
+                string dstFilePathanme = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+                // Then jump out 2 folders.
+                dstFilePathanme = Path.GetDirectoryName(Path.GetDirectoryName(dstFilePathanme));
 
                 // Get output filenames. In case of a document separation job there will multiple output filenames. 
                 // Make sure we are able to collect them all
                 XmlNodeList outputfileNodes = xmlDoc.SelectSingleNode("DocProcessStatus/OutputFilenames").ChildNodes;
                 foreach (XmlNode outputfileNode in outputfileNodes)
                 {
-                    // Copy each file from the internal output to client specified folder
+                    // Stream each output file from the internal output to client specified folder
                     if (!string.IsNullOrEmpty(outputfileNode.InnerText))
+                    {
+                        // Add destination folder and filename
+                        dstFilePathanme = Path.Combine(dstFilePathanme, "Processed Docs", outputfileNode.InnerText);
+
+                        // Add incrementing number if necessary
+                        dstFilePathanme = MakeFilenameUnique(dstFilePathanme);
+
+                        // Download document
+                        DownloadDocumentFromServer(jobID, outputfileNode.InnerText, dstFilePathanme);
+                    }
+
+                    // Copy each file from the internal output to client specified folder
+                    /*if (!string.IsNullOrEmpty(outputfileNode.InnerText))
                     {
                         string srcFilePathname = Path.Combine(jobFolder, outputfileNode.InnerText);
                         string dstFilePathanme = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "..", "..", "Processed Docs", outputfileNode.InnerText);
+                        dstFilePathanme = MakeFilenameUnique(dstFilePathanme);
                         File.Copy(srcFilePathname, dstFilePathanme);
                     }
+                    */
                 }
                 // Purge Job and remove it from PixEdit Server internal folders
                 _server.PurgeJob(_userID, jobID);
