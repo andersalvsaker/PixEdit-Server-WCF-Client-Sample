@@ -235,7 +235,7 @@ namespace MyPixEditServerClientApp
 
         void DownloadDocumentFromServer(Guid jobID, string filename, string dstFilePathname)
         {
-            // Get file from server
+            // Get file size from server
             long fileLength = _server.GetJobDocumentSize(_userID, jobID, filename);
 
             // Get max chunk size from app.config file
@@ -243,7 +243,7 @@ namespace MyPixEditServerClientApp
             int chunkCount = (int)(fileLength / chunkSize);
             int lastChunkSize = (int)(fileLength % chunkSize);
 
-            // Create local file stream and server chunks
+            // Create local file stream and downlaod server chunks
             using (Stream stream = System.IO.File.Create(dstFilePathname))
             {
                 int pos = 0;
